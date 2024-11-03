@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20 # 设置作业超时时间为20分钟
+    timeout-minutes: 35 # 设置作业超时时间为20分钟
 
     strategy:
       matrix:
@@ -21,6 +21,7 @@ jobs:
       RUN_TIME_LIMIT_MINUTES: ${{secrets.RUN_TIME_LIMIT_MINUTES}}
       TELEGRAM_BOT_TOKEN: ${{secrets.TELEGRAM_BOT_TOKEN}}
       TELEGRAM_CHAT_ID: ${{secrets.TELEGRAM_CHAT_ID}}
+      SPECIFIC_USER: ${{secrets.SPECIFIC_USER}}
     steps:
       - uses: actions/checkout@v3 # 检出仓库
 
